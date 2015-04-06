@@ -42,8 +42,8 @@ var init = function() {
 		});
 		
 		
-		var lastTicked = 0;
-		var time = 0;
+		var lastTicked = undefined;
+		var time = undefined;
 		var pageTime = Date.now();
 		var beepStage = 0;
 		
@@ -92,6 +92,10 @@ var init = function() {
 			if(time < autoClickSeconds * 1000 && timeSinceTick < 2000) { // If we're connected and the time falls below 1s
 				$("#thebutton").click();
 				alert("AutoKnight clicked the button because the timer was less than " + autoClickSeconds + " second(s)!");
+			}
+			
+			if((timeSinceTick > 3000 && (Date.now() - pageTime) > 60000) || timeSinceTick > 10000) {
+				window.location.reload();
 			}
 		};
 		window.setInterval(update, 250); // 4 times per second, because why not?
