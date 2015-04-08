@@ -28,13 +28,13 @@ var init = function() {
 		applyButton.addEventListener('click', function(e) {
 			slowBeepSeconds = parseInt(slowInput.value) || 0;
 			fastBeepSeconds = parseInt(fastInput.value) || 0;
-			clickBeepSeconds = parseInt(clickInput.value) || 0;
+			autoClickSeconds = parseInt(clickInput.value) || 0;
 			
 			document.dispatchEvent(new CustomEvent("AutoKnight_storageSet", {
 				detail: {
 					"slowBeepSeconds": slowBeepSeconds,
 					"fastBeepSeconds": fastBeepSeconds,
-					"clickBeepSeconds": clickBeepSeconds
+					"autoClickSeconds": autoClickSeconds
 				}
 			}));
 			
