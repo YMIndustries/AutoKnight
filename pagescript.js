@@ -12,7 +12,30 @@ var init = function() {
 			<label for='autoKnightFast' style='display: inline-block; width: 100px;'>Fast Beep at</label> <input type='numeric' id='autoKnightFast' style='width: 80px;'> seconds<br>\
 			<label for='autoKnightClick' style='display: inline-block; width: 100px;'>Auto Click at</label> <input type='numeric' id='autoKnightClick' style='width: 80px;'> seconds<br>\
 			<button id='autoKnightSave'>Apply changes</button>\
-		</div>";
+		</div>\
+		<style type='text/css'>\
+			.thebutton-container.active.disconnected:before {\
+				content: 'DISCONNECTED';\
+				display: block;\
+				text-align: center;\
+				\
+				cursor: not-allowed;\
+				\
+				width: 100%;\
+				height: 100%;\
+				position: absolute;\
+				top: 0;\
+				left: 0;\
+				border-radius: 5px;\
+				z-index: 100;\
+				transform: translate(0,0) scale(1,1) !important;\
+				color: white;\
+				background: red !important;\
+				opacity: 1;\
+				line-height: 60px;\
+				font-size: 14px;\
+			}\
+		</style>";
 		
 		document.querySelector("form.thebutton-form").insertAdjacentHTML('beforeend', markup);
 		
@@ -64,6 +87,14 @@ var init = function() {
 			var timeSinceTick = Date.now() - lastTicked;
 		
 			time = r.thebutton._msLeft;
+			
+			if(timeSinceTick < 1250) {
+				$('.thebutton-container').removeClass('disconnected');
+			}
+			else
+			{
+				$('.thebutton-container').addClass('disconnected');
+			}
 			
 			if(time < fastBeepSeconds * 1000 && timeSinceTick < 1250) {
 				beepStage = (beepStage + 1) % 2;
