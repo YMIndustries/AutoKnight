@@ -1,7 +1,7 @@
 {
 	"name": "AutoKnight",
 	"description": "An automated assistant useful to any Knight of the Button",
-	"version": "1.1.1",
+	"version": "1.2",
 	"permissions": [
 		"http://*.reddit.com/",
 		"storage"
