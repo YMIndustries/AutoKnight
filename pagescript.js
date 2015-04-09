@@ -93,10 +93,6 @@ var init = function() {
 				$("#thebutton").click();
 				alert("AutoKnight clicked the button because the timer was less than " + autoClickSeconds + " second(s)!");
 			}
-			
-			if((timeSinceTick > 3000 && (Date.now() - pageTime) > 60000) || timeSinceTick > 10000) {
-				window.location.reload();
-			}
 		};
 		window.setInterval(update, 250); // 4 times per second, because why not?
 	});
