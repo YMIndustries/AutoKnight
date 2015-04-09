@@ -5,6 +5,7 @@ You can download the latest stable version on the [Chrome Webstore](https://chro
 Features:
  * Beep when the timer falls below a certain level
  * Attempt to automatically press the button if the timer falls below a certain level
+ * Disables button if you lose your internet connection or Reddit has downtime, ensures you don't waste your click
 
 Created for /r/thebutton
 
