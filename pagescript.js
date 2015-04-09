@@ -65,10 +65,10 @@ var init = function() {
 		
 			time = r.thebutton._msLeft;
 			
-			if(time < fastBeepSeconds * 1000 && timeSinceTick < 2000) {
+			if(time < fastBeepSeconds * 1000 && timeSinceTick < 1250) {
 				beepStage = (beepStage + 1) % 2;
 			}
-			else if(time < slowBeepSeconds * 1000 && timeSinceTick < 2000) {
+			else if(time < slowBeepSeconds * 1000 && timeSinceTick < 1250) {
 				beepStage = (beepStage + 1) % 4;
 			}
 			else {
@@ -89,7 +89,7 @@ var init = function() {
 				}
 			}
 			
-			if(time < autoClickSeconds * 1000 && timeSinceTick < 2000) { // If we're connected and the time falls below 1s
+			if(time < autoClickSeconds * 1000 && timeSinceTick < 1250) { // If we're connected and the time falls below 1s
 				$("#thebutton").click();
 				alert("AutoKnight clicked the button because the timer was less than " + autoClickSeconds + " second(s)!");
 			}
