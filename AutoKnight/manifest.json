@@ -4,6 +4,7 @@
 	"version": "1.2",
 	"permissions": [
 		"http://*.reddit.com/",
+		"https://*.reddit.com/",
 		"storage"
 	],
 	"icons": {
@@ -14,6 +15,11 @@
 		{
 			"js": [ "foreground.js" ],
 			"matches": [ "http://*.reddit.com/*"],
+			"run_at": "document_end"
+		},
+		{
+			"js": [ "foreground.js" ],
+			"matches": [ "https://*.reddit.com/*"],
 			"run_at": "document_end"
 		}
 	],
